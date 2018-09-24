@@ -7,22 +7,6 @@ def readInput():
     file.close()
     return data
 
-def solution(input_text):
-    output = []
-    digits = [int(ch) for ch in input_text]
-    last_digit = digits[0]
-    count = 1
-    for digit in digits[1:]:
-        if digit == last_digit:
-            count += 1
-        else:
-            output.extend((count, last_digit))
-            last_digit = digit
-            count = 1
-    output.extend((count, last_digit))
-    output_text = "".join([str(digit) for digit in output])
-    return output_text
-
 def solvedAB(s, numb):     
     digits=[int(c) for c in s]
     for i in range(int(numb)):
